@@ -88,3 +88,17 @@ model User {
 
   @@map("users")
 }
+
+model Music {
+  id               Int      @id @default(autoincrement())
+  title            String   // Nome da música
+  duration         String   // Ex: "3:45"
+  releaseYear      Int      // Ano de lançamento
+  story            String?  // Breve descrição / contexto
+  playbackUrl      String   // Link para ouvir a música
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("musics")
+}
